@@ -1,0 +1,78 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----< jp.tonbiattack.debuglab:spring-jpa-enum-ordinal-storage-lab >-----
+[INFO] Building spring-jpa-enum-ordinal-storage-lab 1.0.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.1:resources (default-resources) @ spring-jpa-enum-ordinal-storage-lab ---
+[INFO] skip non existing resourceDirectory /home/ubuntu/spring-jpa-enum-ordinal-storage-lab/src/main/resources
+[INFO] skip non existing resourceDirectory /home/ubuntu/spring-jpa-enum-ordinal-storage-lab/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.13.0:compile (default-compile) @ spring-jpa-enum-ordinal-storage-lab ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.1:testResources (default-testResources) @ spring-jpa-enum-ordinal-storage-lab ---
+[INFO] skip non existing resourceDirectory /home/ubuntu/spring-jpa-enum-ordinal-storage-lab/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.13.0:testCompile (default-testCompile) @ spring-jpa-enum-ordinal-storage-lab ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.5.2:test (default-test) @ spring-jpa-enum-ordinal-storage-lab ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running jp.tonbiattack.debuglab.shipment.EnumStorageObservationTest
+10:29:43.578 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [jp.tonbiattack.debuglab.shipment.EnumStorageObservationTest]: EnumStorageObservationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+10:29:43.665 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration jp.tonbiattack.debuglab.shipment.ShipmentApplication for test class jp.tonbiattack.debuglab.shipment.EnumStorageObservationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.3)
+
+2026-08-20T10:29:44.002Z  INFO 23771 --- [           main] j.t.d.s.EnumStorageObservationTest       : Starting EnumStorageObservationTest using Java 21.0.11 with PID 23771 (started by ubuntu in /home/ubuntu/spring-jpa-enum-ordinal-storage-lab)
+2026-08-20T10:29:44.003Z  INFO 23771 --- [           main] j.t.d.s.EnumStorageObservationTest       : No active profile set, falling back to 1 default profile: "default"
+2026-08-20T10:29:44.312Z  INFO 23771 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-20T10:29:44.354Z  INFO 23771 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 1 JPA repository interface.
+2026-08-20T10:29:44.714Z  INFO 23771 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-08-20T10:29:44.872Z  INFO 23771 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:5fd311f6-e0e5-4bbf-919c-24ce3cd73428 user=SA
+2026-08-20T10:29:44.875Z  INFO 23771 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-08-20T10:29:44.935Z  INFO 23771 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-08-20T10:29:44.982Z  INFO 23771 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2026-08-20T10:29:45.010Z  INFO 23771 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-08-20T10:29:45.263Z  INFO 23771 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-20T10:29:45.342Z  INFO 23771 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-08-20T10:29:46.084Z  INFO 23771 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-20T10:29:46.121Z  INFO 23771 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-20T10:29:46.474Z  INFO 23771 --- [           main] j.t.d.s.EnumStorageObservationTest       : Started EnumStorageObservationTest in 2.7 seconds (process running for 3.478)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+WARNING: A Java agent has been loaded dynamically (/home/ubuntu/.m2/repository/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.562 s -- in jp.tonbiattack.debuglab.shipment.EnumStorageObservationTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.009 s
+[INFO] Finished at: 2026-08-20T10:29:47Z
+[INFO] ------------------------------------------------------------------------

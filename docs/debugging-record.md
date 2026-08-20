@@ -1,5 +1,9 @@
 # デバッグ記録: enumの既定ORDINAL保存で外部ステータス照会が一致しない
 
+## 実行環境と再現境界
+
+実行環境はJava 21、Spring Boot 3.4.3、Spring Data JPA、Hibernate、H2、JUnit Jupiterです。公開境界は`ShipmentRepository#saveAndFlush`と`findById`であり、観測はJPAの再読込とJDBCによる`shipment.status`物理列の読取を分離します。H2インメモリDB、固定した出荷コード、固定enumを使うため、時刻・乱数・外部I/Oに依存しません。
+
 ## 再現手順
 
 バグ状態はコミット`215fb8c`で再現します。

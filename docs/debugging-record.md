@@ -20,7 +20,7 @@ git switch main
 mvn --batch-mode clean test
 ```
 
-## 観測した事実
+## 最初に観測した事実
 
 `ShipmentStatus.SHIPPED`を保存した後、JPAで再読込した値は`SHIPPED`でした。しかしJDBCで同じ`shipment.status`列を読むと`"1"`でした。したがって、エンティティの保存失敗ではなく、物理列の保存形式だけが外部照会契約と異なります。
 
@@ -32,7 +32,7 @@ mvn --batch-mode clean test
 
 失敗出力は[`evidence/01-bug-service-test-output.txt`](../evidence/01-bug-service-test-output.txt)に保存しています。
 
-## 競合仮説
+## 競合仮説と検証
 
 | 仮説 | 検証 | 判断 |
 | --- | --- | --- |
@@ -40,7 +40,7 @@ mvn --batch-mode clean test
 | H2固有の値変換が原因 | 物理列をJDBCで読み、`SHIPPED.ordinal()`と比較する | 整数値が一致するため、既定マッピング規則を支持 |
 | enum保存形式の指定漏れ | `@Enumerated(EnumType.STRING)`だけを追加して再実行する | 物理列が`"SHIPPED"`となり採用 |
 
-## 原因
+## 確定した原因
 
 `@Enumerated`を明示しないenumフィールドは、`@EnumeratedValue`を持たない場合に`EnumType.ORDINAL`として扱われます。[1] `ORDINAL`はenumを整数として、`STRING`は文字列として保存します。[2] 本ラボでは`Shipment.status`に保存形式の指定がなかったため、`SHIPPED`は列挙順序の整数`1`として物理列へ保存されました。
 
@@ -58,7 +58,7 @@ mvn --batch-mode clean test
 
 `EnumStorageObservationTest#explicitStringMappingStoresEnumName`は、明示的な`STRING`保存が`"SHIPPED"`を保存することを直接確認します。修正後の全テスト出力は[`evidence/03-fixed-full-test-output.txt`](../evidence/03-fixed-full-test-output.txt)にあります。
 
-## スコープ
+## スコープと注意点
 
 このラボは新規に保存する一つのenumフィールドの形式だけを扱います。既存DB行の段階的な移行、独自コードを持つenum、AttributeConverter、DBネイティブenum、外部APIのスキーマ契約には適用範囲を広げません。
 
